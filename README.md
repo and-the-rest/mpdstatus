@@ -18,5 +18,5 @@ $ bundle install --path vendor/bundle
 
 ```bash
 $ vim config.yml # change the host and port, if necessary
-$ ruby app.rb # takes normal sinatra arguments
+$ bundle exec ruby app.rb # takes normal sinatra arguments
 ```
