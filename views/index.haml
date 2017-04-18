@@ -1,0 +1,17 @@
+!!!
+%html
+	%head
+		%title mpdstatus
+		%link(rel="stylesheet" href="css/style.css")
+	%body
+		%h1 mpdstatus
+		%h2 now playing
+		%p= status[:np]
+		%details
+			%summary queue
+			- status[:queue].each do |song|
+				%p= song
+		%h2 stats
+		%p Uptime: #{status[:stats][:uptime]} seconds
+		%p Playtime: #{status[:stats][:playtime]} seconds
+		%p Database: #{status[:stats][:songs]} songs by #{status[:stats][:artists]} artists
