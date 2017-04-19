@@ -20,7 +20,13 @@ def mpd_status
   status = {}
   status[:np] = mpd.playing? ? "#{mpd.current_song.artist} - #{mpd.current_song.title}" : "Nothing currently playing!"
   status[:status] = mpd.status
-  active_queue = mpd.queue[mpd.status[:nextsong]..-1]
+
+  if mpd.status[:nextsong]
+    active_queue = mpd.queue[mpd.status[:nextsong]..-1]
+  else
+    active_queue = []
+  end
+
   status[:queue] = active_queue.map { |s| "#{s.artist} - #{s.title}" }
   status[:stats] = mpd.stats
 
