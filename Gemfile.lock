@@ -3,7 +3,7 @@ GEM
   specs:
     haml (4.0.7)
       tilt
-    rack (1.6.5)
+    rack (1.6.11)
     rack-protection (1.5.3)
       rack
     ruby-mpd (0.3.3)
